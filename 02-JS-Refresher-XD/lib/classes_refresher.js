@@ -31,5 +31,8 @@ class Human extends Person {
 
 const james = new Human("James", 21, "male");
 console.log(james);
+// a person method being called on a human instance
 james.printDetails();
+
+// a human method being called on a human instance
 james.printHumanDetails();

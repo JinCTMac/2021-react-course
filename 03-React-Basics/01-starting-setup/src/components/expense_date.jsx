@@ -1,4 +1,4 @@
-import "./expense_date";
+import "./expense_date.css";
 
 const ExpenseDate = (props) => {
   // when splitting date into its own Component, we need to get props again to access the data from the App.js

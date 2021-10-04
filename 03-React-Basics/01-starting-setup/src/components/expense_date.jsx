@@ -1,3 +1,5 @@
+import "./expense_date";
+
 const ExpenseDate = (props) => {
   // when splitting date into its own Component, we need to get props again to access the data from the App.js
   const expenseMonth = props.date.toLocaleString('en-US', { month: 'long' });
@@ -5,11 +7,11 @@ const ExpenseDate = (props) => {
   const expenseYear = props.date.getFullYear();
 
   return (
-    <div>
+    <div className="expense-date">
       {/* {props.date.toISOString()} */}
-      <div>{expenseMonth}</div>
-      <div>{expenseYear}</div>
-      <div>{expenseDay}</div>
+      <div className="expense-date__month">{expenseMonth}</div>
+      <div className="expense-date__year">{expenseYear}</div>
+      <div className="expense-date__day">{expenseDay}</div>
     </div>
   )
 }

@@ -1,7 +1,7 @@
 // then in the expense item.jsx, we can import the expenseDate
 
 import ExpenseDate from "./expense_date";
-import Card from "./card";
+import Card from "../UI/card";
 import "./expense_item.css";
 
 const ExpenseItem = (props) => {

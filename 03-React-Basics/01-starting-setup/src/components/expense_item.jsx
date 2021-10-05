@@ -1,6 +1,7 @@
 // then in the expense item.jsx, we can import the expenseDate
 
 import ExpenseDate from "./expense_date";
+import Card from "./card";
 import "./expense_item.css";
 
 const ExpenseItem = (props) => {
@@ -9,7 +10,7 @@ const ExpenseItem = (props) => {
   // const expenseAmount = 294.67;
 
   return (
-    <div className="expense-item">
+    <Card className="expense-item">
       {/* in here we can call our expenseDate component
       so we can call components inside of components */}
       {/* note in order to access the props.date value inside of the expense_date.jsx, we need to pass the date attribute inside here as a props */}
@@ -18,7 +19,7 @@ const ExpenseItem = (props) => {
         <h2>{props.title}</h2>
         <div className="expense-item__price">£{props.amount}</div>
       </div>
-    </div>
+    </Card>
   )
 }
 

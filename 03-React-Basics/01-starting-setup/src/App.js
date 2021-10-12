@@ -1,5 +1,6 @@
 // import ExpenseItem from "./components/expense_item";
 import Expenses from "./components/Expenses/expenses";
+import NewExpense from "./components/NewExpense/new_expense";
 
 function App() {
   const expenses = [
@@ -27,9 +28,7 @@ function App() {
   return (
     <div>
       {/* inside we can pass the whole expenses array as an attribute that we can access via props inside of the expenses.jsx - we can call props.expenses[0] for example */}
-      <h2>Let's get started!</h2>
-      <p>This is also visible!</p>
-      <p>Cool</p>
+      <NewExpense></NewExpense>
       <Expenses expenses={expenses}></Expenses>
     </div>
   );

@@ -9,6 +9,10 @@ const ExpenseItem = (props) => {
   // const expenseTitle = 'Car Insurance';
   // const expenseAmount = 294.67;
 
+  const clickHandler = () => {
+    console.log("Clicked!")
+  }
+
   return (
     <Card className="expense-item">
       {/* in here we can call our expenseDate component
@@ -19,6 +23,7 @@ const ExpenseItem = (props) => {
         <h2>{props.title}</h2>
         <div className="expense-item__price">£{props.amount}</div>
       </div>
+      <button onClick={clickHandler}>Change title</button>
     </Card>
   )
 }

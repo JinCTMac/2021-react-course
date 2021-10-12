@@ -10,8 +10,10 @@ const ExpenseItem = (props) => {
   // const expenseAmount = 294.67;
 
   const clickHandler = () => {
-    console.log("Clicked!")
+    console.log("Clicked!");
+    title = "Updated";
   }
+  let title = props.title;
 
   return (
     <Card className="expense-item">
@@ -20,7 +22,7 @@ const ExpenseItem = (props) => {
       {/* note in order to access the props.date value inside of the expense_date.jsx, we need to pass the date attribute inside here as a props */}
       <ExpenseDate date={props.date}></ExpenseDate>
       <div className="expense-item__description">
-        <h2>{props.title}</h2>
+        <h2>{title}</h2>
         <div className="expense-item__price">£{props.amount}</div>
       </div>
       <button onClick={clickHandler}>Change title</button>

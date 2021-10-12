@@ -1,4 +1,6 @@
 // then in the expense item.jsx, we can import the expenseDate
+// need to import useState to change the state and call the component function again
+import React, { useState } from 'react';
 
 import ExpenseDate from "./expense_date";
 import Card from "../UI/card";
@@ -9,11 +11,16 @@ const ExpenseItem = (props) => {
   // const expenseTitle = 'Car Insurance';
   // const expenseAmount = 294.67;
 
+  // useState takes a variable and returns an array of 2 elements
+  // the variable value, and a function to change the value of that variable
+  const [title, setTitle] = useState(props.title);
+
+  // we update the value of a variable with an event and calling that function
+  // the function takes the argument of what we want the variable to be changed to
   const clickHandler = () => {
     console.log("Clicked!");
-    title = "Updated";
+    setTitle("Updated!");
   }
-  let title = props.title;
 
   return (
     <Card className="expense-item">

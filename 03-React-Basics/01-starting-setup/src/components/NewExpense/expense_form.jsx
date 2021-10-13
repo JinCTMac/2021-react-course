@@ -5,6 +5,7 @@ const ExpenseForm = () => {
 
   // we store the useState variable as an empty string ''
   // because the input element always returns a string
+  // even if its a number, it will be returned as a string to be set equal to the value
   const [enteredTitle, setEnteredTitle] = useState('');
   const [enteredAmount, setEnteredAmount] = useState('');
   const [enteredDate, setEnteredDate] = useState('');

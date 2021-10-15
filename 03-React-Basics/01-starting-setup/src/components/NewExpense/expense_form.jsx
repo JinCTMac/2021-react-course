@@ -1,7 +1,7 @@
 import './expense_form.css';
 import React, { useState } from 'react';
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
 
   // we store the useState variable as an empty string ''
   // because the input element always returns a string
@@ -49,7 +49,7 @@ const ExpenseForm = () => {
       date: new Date(enteredDate)
     }
 
-    console.log(expenseData);
+    props.onSaveExpenseData(expenseData);
     setEnteredTitle('');
     setEnteredAmount('');
     setEnteredDate('');

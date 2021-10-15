@@ -25,10 +25,15 @@ function App() {
     },
   ];
 
+  const addExpenseHandler = expense => {
+    console.log('in app.js')
+    console.log(expense);
+  }
+
   return (
     <div>
       {/* inside we can pass the whole expenses array as an attribute that we can access via props inside of the expenses.jsx - we can call props.expenses[0] for example */}
-      <NewExpense></NewExpense>
+      <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
       <Expenses expenses={expenses}></Expenses>
     </div>
   );

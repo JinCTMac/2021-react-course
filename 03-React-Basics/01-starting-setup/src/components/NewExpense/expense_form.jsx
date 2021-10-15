@@ -23,6 +23,9 @@ const ExpenseForm = () => {
     setEnteredTitle(event.currentTarget.value);
     // instead of using 3 separate states, we could use the single setUserInput state and add to it like so with a new object to replace the old one
     // setUserInput({...userInput, enteredTitle: event.currentTarget.value})
+    // setUserInput((prevState) => {
+    //   return (...prevState, enteredTitle: event.currentTarget.value);
+    // })
   };
 
   const amountChangeHandler = (event) => {
@@ -37,8 +40,20 @@ const ExpenseForm = () => {
     // setUserInput({...userInput, enteredDate: event.currentTarget.value})
   }
 
+  const submitHandler = (event) => {
+    // add event.preventDefault() to stop the page reloading
+    event.preventDefault();
+
+    const expenseData = {
+      title: enteredTitle,
+      amount: enteredAmount,
+      // we make a new Date object and pass in the enteredDate to parse into a date
+      date: new Date(enteredDate)
+    }
+  }
+
   return (
-    <form action="">
+    <form action="" onChange={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>

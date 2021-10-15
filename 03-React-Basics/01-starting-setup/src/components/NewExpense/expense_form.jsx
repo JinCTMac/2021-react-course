@@ -30,13 +30,11 @@ const ExpenseForm = () => {
 
   const amountChangeHandler = (event) => {
     setEnteredAmount(event.currentTarget.value);
-    // instead of using 3 separate states, we could use the single setUserInput state and add to it like so with a new object to replace the old one
     // setUserInput({...userInput, enteredAmount: event.currentTarget.value})
   }
 
   const dateChangeHandler = (event) => {
     setEnteredDate(event.currentTarget.value);
-    // instead of using 3 separate states, we could use the single setUserInput state and add to it like so with a new object to replace the old one
     // setUserInput({...userInput, enteredDate: event.currentTarget.value})
   }
 
@@ -51,23 +49,26 @@ const ExpenseForm = () => {
       date: new Date(enteredDate)
     }
 
-    console.log(expenseData)
+    console.log(expenseData);
+    setEnteredTitle('');
+    setEnteredAmount('');
+    setEnteredDate('');
   }
 
   return (
-    <form action="" onChange={submitHandler}>
+    <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input type="text" onChange={titleChangeHandler}/>
+          <input value={enteredTitle} type="text" onChange={titleChangeHandler}/>
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
-          <input type="number" steps="0.01" onChange={amountChangeHandler}/>
+          <input value={enteredAmount} type="number" steps="0.01" onChange={amountChangeHandler}/>
         </div>
         <div className="new-expense__control">
           <label>Date</label>
-          <input type="date" min="2019-01-01" max="2022-12-31" onChange={dateChangeHandler}/>
+          <input value={enteredDate} type="date" min="2019-01-01" max="2022-12-31" onChange={dateChangeHandler}/>
         </div>
       </div>
       <div className="new-expense__actions">

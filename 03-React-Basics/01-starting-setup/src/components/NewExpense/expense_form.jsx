@@ -50,6 +50,8 @@ const ExpenseForm = () => {
       // we make a new Date object and pass in the enteredDate to parse into a date
       date: new Date(enteredDate)
     }
+
+    console.log(expenseData)
   }
 
   return (
@@ -61,7 +63,7 @@ const ExpenseForm = () => {
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
-          <input type="number" min="0.01" steps="0.01" onChange={amountChangeHandler}/>
+          <input type="number" steps="0.01" onChange={amountChangeHandler}/>
         </div>
         <div className="new-expense__control">
           <label>Date</label>

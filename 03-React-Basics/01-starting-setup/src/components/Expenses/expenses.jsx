@@ -12,6 +12,9 @@ const Expenses = (props) => {
     console.log(filteredExpenseYear);
     setFilteredYear(filteredExpenseYear)
   }
+
+  // below we point to the expenseFilterYearHandler as a prop as well as
+  // setting the default year as filteredYear, which is 2020 via 2-way binding
   return (
     <div>
       <ExpenseFilter selectedYear={filteredYear} onExpenseFilterYear={expenseFilterYearHandler}></ExpenseFilter>
